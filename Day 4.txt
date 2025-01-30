@@ -1,0 +1,243 @@
+1.check even or odd
+
+import java.util.*;
+public class Main
+{
+    Scanner s = new Scanner(System.in);
+	int n = s.nextInt();
+    void even(){
+        if(n % 2==0 ){
+            System.out.println("Even");
+        }
+        else{
+            System.out.println("Odd");
+        }
+    }
+	public static void main(String[] args) {
+	    Main e = new Main();
+		e.even();
+	}
+}
+
+2.Simple Interest
+
+import java.util.*;
+class Simple_Interest{
+    double p,n,r;
+    
+    void interest(){
+        double res = (p * n * r) / 100;
+        System.out.println("Simple interest:"+res);
+    }
+}
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s = new Scanner(System.in);
+        double p = s.nextDouble();
+        double n = s.nextDouble();
+        double r = s.nextDouble();
+		Simple_Interest si = new Simple_Interest();
+		si.p = p;
+		si.n = n;
+		si.r = r;
+		si.interest();
+	}
+}
+
+
+3.if input is -10 output should be -11
+
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        System.out.println(~n);
+        
+	}
+}
+
+
+4.which is greater without using operators only one function can be used
+
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s = new Scanner(System.in);
+        int a = s.nextInt();
+        int b = s.nextInt();
+        
+        int c = ((a+b) + Math.abs(a-b)) / 2;
+        int d = ((a+b) - Math.abs(a-b)) / 2;
+        System.out.println("Max is:" + c);
+        System.out.println("Min is:" + d);
+        
+	}
+}
+
+
+5.ACCESS MODIFIER
+// PUBLIC
+
+import java.util.*;
+class Teacher {
+    public String name;
+    
+    public void teach() {
+        System.out.println(name + " is teaching.");
+    }
+}
+
+class Student {
+    public String studentName;
+
+    public void study() {
+        System.out.println(studentName + " is studying.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Teacher teacher = new Teacher();
+        teacher.name = "Mr.Sri";  // Accessing public variable
+        teacher.teach();  // Accessing public method
+
+        Student student = new Student();
+        student.studentName = "Ram";  // Accessing public variable
+        student.study();  // Accessing public method
+    }
+}
+
+//PRIVATE
+
+import java.util.*;
+class Teacher {
+    private String name;  
+    
+    private void teach() {
+        System.out.println(name + " is teaching.");
+    }
+    
+    public void setName(String name) {
+        this.name = name;  
+    }
+
+    public void getName() {
+        System.out.println(name);  
+    }
+}
+
+class Student {
+    private String studentName;
+    
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
+    }
+
+    public void study() {
+        System.out.println(studentName + " is studying.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Teacher teacher = new Teacher();
+        teacher.setName("Mr. Sri");  
+        teacher.getName(); 
+        Student student = new Student();
+        student.setStudentName("Ram");  
+        student.study(); 
+    }
+}
+
+
+//PROTECTED
+
+import java.util.*;
+class Teacher {
+    protected String name;
+
+    protected void teach() {
+        System.out.println(name + " is teaching.");
+    }
+}
+
+class Student extends Teacher {
+    public void study() {
+        name = "Mr. Sri";  
+        teach();  
+        System.out.println("Student is studying.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student student = new Student();
+        student.study();
+    }
+}
+
+// DEFAULT
+
+import java.util.*;
+class Teacher {
+    String name;  
+    
+    void teach() {  
+        System.out.println(name + " is teaching.");
+    }
+}
+
+class Student {
+    public void study() {
+        Teacher teacher = new Teacher();
+        teacher.name = "Mr. Sri";  
+        teacher.teach();  
+        System.out.println("Student is studying.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student student = new Student();
+        student.study();
+    }
+}
+
+
+5.TRI PERFECT
+
+import java.util.*;
+
+public class Main {
+   public static void main(String[] args) {
+       int sum = 0;
+       Scanner s = new Scanner(System.in);
+       int n = s.nextInt();
+       for(int i = 1;i<=n;i++){
+           if(n%i == 0){
+               System.out.println(i);
+               sum = sum + i;
+               
+           }
+           
+       }
+       System.out.println("Sum of factor:"+sum);
+       if( n * 3 == sum){
+           System.out.println("Tri perfect number");
+       }
+       else{
+           System.out.println("Not tri perfect number");
+       }
+       
+    }
+}
+
+
+
+

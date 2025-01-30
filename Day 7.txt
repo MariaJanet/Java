@@ -1,0 +1,191 @@
+1.concatenation
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		String str1 = "Hello";
+		String str2 = "World";
+		System.out.println(str1+" "+str2);
+	}
+}
+
+
+2.length of a string
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		String str1 = "Hello";
+		//String str2 = "World";
+		int length = str1.length();
+		System.out.println(length);
+	}
+}
+
+
+3.CharAt()
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		String str1 = "Hello";
+		//String str2 = "World";
+		char ch  = str1.charAt(0);
+		System.out.println(ch);
+	}
+}
+
+
+4.Boolean
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		String str1 = "hello";
+		String str2 = "WORLD";
+		System.out.println("Check wheather it is boolean:"+str1.equals(str2));
+	}
+}
+
+
+5.ignorecase()
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		String str1 = "hello";
+		String str2 = "HELLO";
+		System.out.println("Check wheather it is boolean: "+str1.equalsIgnoreCase(str2));
+	}
+}
+
+
+6.upper and lowercase
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		String str1 = "hello";
+		String str2 = "HELLO";
+		System.out.println(str1.toUpperCase());
+		System.out.println(str2.toLowerCase());
+	}
+}
+
+
+7.indexOf()
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		String str1 = "hello World";
+		System.out.println(str1.indexOf('o'));
+		
+	}
+}
+
+
+8.lastindexOf()
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		String str1 = "hello World";
+		System.out.println("startsWith:"+str1.lastIndexOf('o'));
+		//System.out.println("startsWith:"+str1.startsWith("hello"));
+	}
+}
+
+
+9.Startswith and endsWith()
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		String str1 = "hello World";
+		System.out.println("startsWith:"+str1.endsWith("hello"));
+		System.out.println("startsWith:"+str1.startsWith("hello"));
+	}
+}
+
+10.Reverse a String
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		String str = "hello World";
+		String rev = "  ";
+		for(int i = str.length()-1; i >=0;i--){
+		    rev += str.charAt(i);
+		    
+		}
+		System.out.println(rev);
+		
+		
+	}
+}
+
+
+11.Occurance of character in a String
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		String str = "hello World";
+		char ch = 'o';
+		int count = 0;
+		for(int i = 0;i<str.length();i++){
+		    if(str.charAt(i) == ch){
+		        count++;
+		    }
+		    
+		}
+		System.out.println(count);
+		
+		
+	}
+}
+
+12.Check if string is having alphabet or not
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		String str = "hello World01";
+		if(str.matches("[a-z A-Z ]+")){
+		    System.out.println("It contains only Alphabet");
+		}
+		else{
+		    System.out.println("It has special characters");
+		}
+		
+	}
+}
+
+
+13.character to string
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		char[]charArray = {'M','A','R','I','A'};
+		String str = new String(charArray);
+		System.out.println(str);
+		
+	}
+}
+
+

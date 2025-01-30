@@ -1,0 +1,89 @@
+package Java_Prac;
+import java.util.*;
+class Node{
+    int data;
+    Node next;
+    Node prev;
+    Node(int data){
+        this.data=data;
+        this.next=null;
+        this.prev=null;
+    }
+}
+class DLL{
+    Node head,tail;
+    public void insertAtBeg(int data){
+        Node newnode = new Node(data);
+        if(head == null){
+            head= newnode;
+            tail=newnode;
+        }
+        else{
+            newnode.next=head;
+            head.prev=newnode;
+            head=newnode;
+        }
+    }
+    public void insertAtend(int data){
+        Node newnode = new Node(data);
+        if(tail==null){
+            head = newnode;
+            tail=newnode;
+        }
+        else{
+            tail.next=newnode;
+            newnode.prev=tail;
+            tail=newnode;
+        }
+    }
+    public void deleteAtBeg(){
+        if(head==null){
+            System.out.println("List is empty");
+        }
+        if(head == tail){
+            head = tail=null;
+        }
+        else{
+            head=head.next;
+            head.prev=null;
+        }
+    }
+    public void deleteAtEnd(){
+    	Node temp = head;
+    	tail.prev = tail;
+    	while(temp.next.next != null) {
+    		temp = temp.next;
+    	}
+    	temp.next = null;
+    }
+    public void display(){
+        Node temp=head;
+        if(temp==null){
+            System.out.println("List is empty");
+        }
+        while (temp != null) {
+            System.out.print(temp.data);
+            if (temp.next != null) {
+                System.out.print("<-->");
+            }
+            temp = temp.next;
+        }
+        System.out.println();
+    }
+}
+public class Main {
+
+	public static void main(String[] args) {
+		  DLL link = new DLL();
+		   link.insertAtBeg(100);
+		   link.insertAtBeg(400);
+		   link.insertAtBeg(500);
+		   link.insertAtend(200);
+		   link.insertAtend(300);
+		   link.insertAtend(600);
+		   link.deleteAtBeg();
+		   link.deleteAtEnd();
+		   link.display();
+	}
+
+}

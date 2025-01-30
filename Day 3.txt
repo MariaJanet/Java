@@ -1,0 +1,476 @@
+1.Square pattern
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s = new Scanner(System.in);
+	    int n = s.nextInt();
+	    for(int i = 1;i<=n;i++){
+	        for(int j = 1; j<=n ; j++){
+	            System.out.print("* ");
+	        }
+	        System.out.println();
+	    }
+		
+	}
+}
+
+
+2.Rectangular shape
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s = new Scanner(System.in);
+	    int n = s.nextInt();
+	    int m = s.nextInt();
+	    for(int i = 1;i<=n;i++){
+	        for(int j = 1; j<=m ; j++){
+	            System.out.print("* ");
+	        }
+	        System.out.println();
+	    }
+		
+	}
+}
+
+3.Hallow Square
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s = new Scanner(System.in);
+	    int n = s.nextInt();
+	    
+	    for(int i = 1;i<=n;i++){
+	        for(int j = 1; j<=n ; j++){
+	            if(i == 1 || i == n || j == 1 || j == n){
+	                
+	            
+	            System.out.print("* ");
+	            }
+	            else{
+	                System.out.print("  ");
+	            }
+	        }
+	        System.out.println();
+	        
+	    }
+		
+	}
+}
+
+
+4.Mirror right angle
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s = new Scanner(System.in);
+	    int n = s.nextInt();
+	    
+	    for(int i = 1;i<=n;i++){
+	       
+	        
+	        for(int k = 1; k<=n-i ; k++){
+	            System.out.print("  ");
+	        }
+	            for(int j = 1; j<= i ; j++){
+	                System.out.print("* ");
+	                
+	           
+	            
+	        }
+	        System.out.println();
+	        
+	    }
+		
+	}
+}
+
+
+6.Inverted mirror right angle
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s = new Scanner(System.in);
+	    int n = s.nextInt();
+	    
+	    for(int i = n;i>=1;i--){
+	       
+	        
+	        for(int k = 1; k<=n-i ; k++){
+	            System.out.print("  ");
+	        }
+	            for(int j = 1; j<= i ; j++){
+	                System.out.print("* ");
+	                
+	           
+	            
+	        }
+	        System.out.println();
+	        
+	    }
+		
+	}
+}
+
+
+7.left arrow
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s = new Scanner(System.in);
+	    int n = s.nextInt();
+	    
+	    for(int i = 1;i<=n;i++){
+	       
+	        
+	        for(int k = 1; k<=n-i ; k++){
+	            System.out.print("  ");
+	        }
+	            for(int j = 1; j<= i ; j++){
+	                System.out.print("* ");
+	        }
+	        
+	        System.out.println();
+	        
+	    }
+	    for(int i = n-1;i>=1;i--){
+	       
+	        
+	        for(int k = 1; k<=n-i ; k++){
+	            System.out.print("  ");
+	        }
+	            for(int j = 1; j<= i ; j++){
+	                System.out.print("* ");
+	                
+	           
+	            
+	        }
+	        System.out.println();
+	        
+	    }
+
+		
+	}
+}
+
+
+8.right arrow
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s = new Scanner(System.in);
+	    int n = s.nextInt();
+	    
+	    for(int i = 1;i<=n;i++){
+	            for(int j = 1; j<= i ; j++){
+	                System.out.print("* ");
+	        }
+	        
+	        System.out.println();
+	        
+	    }
+	    for(int i = n-1;i>=1;i--){
+	        
+	    
+	            for(int j = 1; j<= i ; j++){
+	                System.out.print("* ");
+	                
+	           
+	            
+	        }
+	        System.out.println();
+	        
+	    
+}
+		
+	}
+}
+
+9.Diamond
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s = new Scanner(System.in);
+	    int n = s.nextInt();
+	    
+	     for(int i = 1;i<=n;i++){
+	       
+	        
+	        for(int k = 1; k<=n-i ; k++){
+	            System.out.print(" ");
+	        }
+	            for(int j = 1; j<= i; j++){
+	                System.out.print("* ");
+	        }
+	        
+	        System.out.println();
+	        
+	    }
+	    for(int i = n-1;i>=1;i--){
+	       
+	        
+	        for(int k = 1; k<=n-i ; k++){
+	            System.out.print(" ");
+	        }
+	            for(int j = 1; j<= i ; j++){
+	                System.out.print("* ");
+	                
+	           
+	            
+	        }
+	        System.out.println();
+	        
+	    }
+
+
+		
+	}
+}
+
+
+10.Triangle
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s = new Scanner(System.in);
+	    int n = s.nextInt();
+	    
+	     for(int i = 1;i<=n;i++){
+	       
+	        
+	        for(int k = 1; k<=n-i ; k++){
+	            System.out.print("  ");
+	        }
+	            for(int j = 1; j<= (2* i-1) ; j++){
+	                System.out.print("* ");
+	        }
+	        
+	        System.out.println();
+	        
+	    }
+		
+	}
+}
+
+
+11.Inverted triangle
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s = new Scanner(System.in);
+	    int n = s.nextInt();
+	    
+	   for(int i = n;i>=1 ;i--){
+	       
+	        
+	        for(int k = 1; k<=n-i ; k++){
+	            System.out.print("  ");
+	        }
+	            for(int j = 1; j<= (2* i)-1 ; j++){
+	                System.out.print("* ");
+	        }
+	        
+	        System.out.println();
+	        
+	    }
+	}
+}
+
+
+12.Hallow triangle
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s = new Scanner(System.in);
+	    int n = s.nextInt();
+	    
+	    for(int i = 1;i<=n;i++){
+	       
+	        
+	        for(int k = 1; k<=n-i ; k++){
+	            System.out.print("  ");
+	        }
+	            for(int j = 1; j<= (2 * i)-1 ; j++){
+	                if(i == 1 || i == n || j == 1 || j == (2 * i)-1){
+	                     System.out.print("* ");
+	                }
+	                else{
+	                    System.out.print("  ");
+	                }
+	                
+	                
+	        }
+	        
+	        System.out.println();
+	        
+	    }
+
+	}
+}
+
+
+13.Hallow diamond
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s = new Scanner(System.in);
+	    int n = s.nextInt();
+	    
+	    for(int i = 1;i<=n;i++){
+	       
+	        
+	        for(int k = 1; k<=n-i ; k++){
+	            System.out.print("  ");
+	        }
+	            for(int j = 1; j<= (2 * i)-1 ; j++){
+	                if(i == 1 || i == 0 || j == 1 || j == (2 * i)-1){
+	                     System.out.print("* ");
+	                }
+	                else{
+	                    System.out.print("  ");
+	                }
+	                
+	                
+	        }
+	        
+	        System.out.println();
+	        
+	    }
+	    for(int i = n-1;i>=1;i--){
+	       
+	        
+	        for(int k = 1; k<=n-i ; k++){
+	            System.out.print("  ");
+	        }
+	            for(int j = 1; j<= (2 * i)-1 ; j++){
+	                if(i == 1 || i == n || j == 1 || j == (2 * i)-1){
+	                     System.out.print("* ");
+	                }
+	                else{
+	                    System.out.print("  ");
+	                }
+	                
+	                
+	        }
+	        
+	        System.out.println();
+	        
+	    }
+
+
+	}
+}
+
+
+14.Floyd triangle
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s = new Scanner(System.in);
+	    int n = s.nextInt();
+	    int sum = 1;
+	    for(int i = 1;i<=n;i++){
+	        for(int j = 1; j<= i ; j++){
+	                System.out.print(sum + " " );
+	                sum++;
+       }
+	        
+	        System.out.println();
+	        
+	    }
+	    
+	    
+
+
+	}
+}
+
+
+15.Constructor
+
+import java.util.*;
+public class Person
+{
+    String name;
+    int age;
+    Person(String name, int age){
+        this.name = name;
+        this.age = age;
+    }
+        
+    void p1(){
+        System.out.println( name);
+        System.out.println( age);
+        
+        
+    }
+    
+	public static void main(String[] args) {
+	    Person t = new Person("Maria",20);
+	    //Main t1 = new Main();
+	    
+	    t.p1();
+	}
+}
+
+16.Rectangle area ,perimeter
+
+import java.util.*;
+public class Rectangle
+{
+    
+    int area(int len,int wid){
+       
+        return len * wid;
+    }
+        
+    int perimeter(int len,int wid){
+        return 2*(len + wid);
+        
+    }
+    
+	public static void main(String[] args) {
+	    Scanner s = new Scanner(System.in);
+        int len = s.nextInt();
+        int wid = s.nextInt();
+	    Rectangle t = new Rectangle();
+	    int area=t.area(len,wid);
+	    int perimeter = t.perimeter(len,wid);
+	    System.out.println("Area:" +area);
+	    System.out.println("Perimeter:" +perimeter);
+	    
+	    
+	}
+}
+
+17.
+
+
+
+

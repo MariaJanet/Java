@@ -1,0 +1,101 @@
+1.Without argument without return type
+
+import java.util.*;
+public class Main
+{   
+    static int a,b,c,d,e,f;
+    static void Initialize(){
+    Scanner s = new Scanner(System.in);
+    a = s.nextInt();
+    b = s.nextInt();
+    int res;
+    }
+    static void Add(){
+        c = a+b;
+        //System.out.println("ADD:" +c);
+    }
+    static void Subtract(){
+        d = a - b;
+        //System.out.println("sub:" +d);
+    }
+    static void Multiply(){
+        e = a * b;
+        //System.out.println("multiply:" +e);
+    }
+    static void Division(){
+        f = a/b;
+        //System.out.println("division:" +f);
+    }
+    static void display(){
+        System.out.println("ADD:" +c);
+        System.out.println("sub:" +d);
+        System.out.println("multiply:" +e);
+        System.out.println("division:" +f);
+    }
+    
+	public static void main(String[] args) {
+		Initialize();
+		Add();
+		Subtract();
+		Multiply();
+		Division();
+		display();
+	}
+}
+
+2.print 100 number if a number is odd + if numb is even -
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    
+	    for(int i = 1; i<= 100 ;i++)
+	    {
+	        if(i % 2 == 0){
+	            System.out.println((i-1) + " ");
+	        }
+	    }
+	    for(int i = 1;i<= 100;i++){
+	        if(i % 2 != 0){
+	            System.out.println((i+1)+" ");
+	        }
+	    }
+	
+	}
+}
+
+3. maximum and minimum number in array
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        
+        int[] arr = {11, 22, 3, 2, 5, 6, 10,8};
+
+        
+        int max = arr[0];
+        int min = arr[0];
+        int max_index = arr[0];
+        int min_index = arr[0];
+
+        
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+                max_index = i;
+            }
+            if (arr[i] < min) {
+                min = arr[i];
+                min_index = i;
+            }
+        }
+
+        
+        System.out.println("Maximum value: " + max + " "+"at index:" + max_index);
+        System.out.println("Minimum value: " + min + " "+ "at index:" + min_index);
+    }
+}
+
+
+

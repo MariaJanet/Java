@@ -1,0 +1,177 @@
+1.Swapping without using temporary variable
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		int a = s.nextInt();
+		int b = s.nextInt();
+		a = a + b;
+		b = a - b;
+		a = a - b;
+		System.out.println(a);
+		System.out.println(b);
+	}
+}
+
+
+2.multiplication without using * operator
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		int a = s.nextInt();
+		int b = s.nextInt();
+		int max = 0,min = 0 ,res = 0;
+		if(a>b){
+		    max = a;
+		    min = b;
+		}
+		if(a<b){
+		    max = b;
+		    min = a;
+		}
+		for(int i = 0;i<max;i++){
+		    res = res + min;
+		}
+		System.out.println(res);
+	}
+}
+
+3.element is present or not if Yes print true else False
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int a = s.nextInt();  
+        int[] b = new int[a];  
+        int target = 5; 
+        boolean found = false;  
+
+        for (int i = 0; i < a; i++) {
+            b[i] = s.nextInt(); 
+        }
+
+
+        for (int i = 0; i < a; i++) {
+            if (b[i] == target) {
+                found = true;
+                break;
+            }
+        }
+
+        
+        if (found) {
+            System.out.println(true);
+        } else {
+            System.out.println(false);
+        }
+
+        
+    }
+}
+
+
+4.Arrange elements in ascending order without using sort function
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter array size:");
+        int a = s.nextInt();  
+        System.out.print("Enter array numbers:");
+        int[] b = new int[a];  
+
+        for (int i = 0; i < a; i++) {
+            b[i] = s.nextInt(); 
+        }
+        for(int i = 0;i<a-1;i++){
+            for(int j = 0 ; j< a - i - 1;j++){
+                if(b[j] > b[j+1]){
+                    int temp = b[j];
+                    b[j] = b[j+1];
+                    b[j+1] = temp;
+                }
+            }
+        }
+        System.out.println("Sorted Array:");
+        for(int i = 0;i<a;i++){
+            System.out.println(b[i]+"  ");
+        }
+
+
+    }
+}
+
+
+
+5.Remove duplicates
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter array size: ");
+        int a = s.nextInt();  
+        System.out.print("Enter array numbers: ");
+        int[] b = new int[a];  
+
+        for (int i = 0; i < a; i++) {
+            b[i] = s.nextInt(); 
+        }
+        for (int i = 0; i < a - 1; i++) {
+            for (int j = 0; j < a - i - 1; j++) {
+                if (b[j] > b[j + 1]) {
+                    
+                    int temp = b[j];
+                    b[j] = b[j + 1];
+                    b[j + 1] = temp;
+                }
+            }
+        }
+        System.out.print("Sorted Array after removing duplicates: ");
+        System.out.print(b[0] + " ");
+
+        for (int i = 1; i < a; i++) {
+            if (b[i] != b[i - 1]) {
+                System.out.print(b[i] + " ");
+            }
+        }
+        
+       
+    }
+}
+
+
+6.Second largest
+
+import java.util.*;
+public class Main
+{
+public static void main(String[] args) {
+    Scanner s = new Scanner(System.in);
+    System.out.println("Enter elements:");
+    int a = s.nextInt();
+    int b[] = new int[a];
+    System.out.println("Enter elements of array:");
+    for(int i =0;i<b.length;i++){
+        b[i] = s.nextInt();
+    }
+    Arrays.sort(b);
+    System.out.println("Sorted Arrays:" + Arrays.toString(b));
+    System.out.println("Minimum:"+b[0]);
+    System.out.println("Second Largest:" +b[a-2]);
+    
+}
+}
+
+
+7.Merge two arrays
