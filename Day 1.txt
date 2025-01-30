@@ -1,0 +1,175 @@
+1. Alphabet or not, vowels, symbols and number
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s = new Scanner(System.in);
+	    char ch=s.next().charAt(0);
+	    if(Character.isLetter(ch)){
+	        System.out.println("Alphabet");
+	        char low = Character.toLowerCase(ch);
+	        if(String.valueOf(ch).matches("[aeiou]")){
+	            System.out.println("Vowel");
+	        }
+	    }
+	    else if(Character.isDigit(ch)){
+	        System.out.println("Number");
+	    }
+	    else{
+	        System.out.println("Symbol");
+	    }
+	   
+	}
+}
+
+
+2.Name Multiple time runs
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    for( ; ;)
+	    {
+	        System.out.println("Maria  ");
+	    }
+	}
+	
+}
+
+3.Leap Year
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s = new Scanner(System.in);
+	    int a = s.nextInt();
+	    if((a % 4==0) || (a % 400 == 0) && a % 100 != 0)
+	    {
+	        System.out.println("leap year");
+	    }
+	    else{
+	        System.out.println("Not a leap year");
+	    }
+	}
+	
+}
+
+4.Sum of digits until single digit
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s = new Scanner(System.in);
+	    int a = s.nextInt();
+	    int b = 0;
+	    if(a>9){
+	        b = (a % 9 ==0)?9:a%9;
+	    }
+	    else{
+	        b=a;
+	    }
+	    System.out.println(b);
+	    
+	}
+	
+}
+
+5. Profit or Loss
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s = new Scanner(System.in);
+	    float a = s.nextInt();
+	    float b = s.nextInt();
+	    float c = b*12;
+	    float d = a - c;
+	    if(c>a)
+	    {
+	        System.out.println("profit" +d);
+	    }
+	    else{
+	        System.out.println(d+"loss");
+	    }
+	    
+	    
+	}
+	
+}
+
+6.Age detector
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s = new Scanner(System.in);
+	    int by = s.nextInt();
+	    int cy = s.nextInt();
+	    int nrml = b - a;
+	    int cen = (100-by)+cy;
+	    if(by > cy){
+	        
+	    }
+	    System.out.println(c);
+	    
+	    
+	    
+	}
+	
+}
+
+7.Calculate no.of yrs,weeks and remaining days for given total days
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s = new Scanner(System.in);
+	    long total_days = s.nextInt();
+	    long years = total_days / 365;
+	    long remain = total_days % 365;
+	    long weeks = remain / 7;
+	    long dyas = remain % 7;
+	    
+	    System.out.println("year " +years);
+	    System.out.println("week " +weeks);
+	    System.out.println("days " +dyas);
+	    
+	    
+	}
+	
+}
+
+
+8. program to read the total seconds and print seconds in time format
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s = new Scanner(System.in);
+	    long total_sec = s.nextInt();
+	    long hrs = total_sec / 3600;
+	    long remain = total_sec % 3600;
+	    long min = remain / 60;
+	    long sec = remain % 60;
+	    
+	    
+	    System.out.println("Hour " +hrs);
+	    System.out.println("Minute " +min);
+	    System.out.println("Seconds:" +sec);
+	   
+	    
+	    
+	}
+	
+}
+
+9.read the large amount of money and break into denomination
+	    
