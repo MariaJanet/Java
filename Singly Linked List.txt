@@ -1,0 +1,68 @@
+SINGLY LINKED LIST
+//INSERT
+
+import java.util.*;
+// creating a class node step -1
+class Node{
+    int data;
+    Node next;
+    //creating a constructor step-2
+    Node(int data){
+        this.data = data;
+        this.next = null;
+    }
+}
+//Step 4
+class LinkedList{
+    Node head,tail;
+    public void insert(int data){
+        Node newNode = new Node(data);
+        //newNode.next = head;
+        if(head == null){
+            head = newNode;
+            tail = newNode;
+        }
+        else{
+            tail.next = newNode;
+            tail = newNode;
+        }
+    }
+    //insert at beginning
+    public void insert_beginning(int data){
+        Node newNode = new Node(data);
+        newNode.next = head;
+        head = newNode;
+        System.out.print("Insert at begining:");
+        
+    }
+    //insert at specific
+    public void insert_specific(int pos,int data){
+        Node newNode = new Node(data);
+        Node temp = head;
+        for(int i = 0; i<pos-1;i++){
+            temp = temp.next;
+            newNode.next = temp.next;
+            temp.next = newNode;
+        }
+    }
+    public void Display(){
+        Node temp = head;
+        while(temp != null){
+            System.out.println(temp.data);
+            temp = temp.next;
+        }
+    }
+}
+public class Main //Step - 3
+{
+	public static void main(String[] args) {
+		LinkedList ll = new LinkedList();
+		ll.insert(100);
+		ll.insert(200);
+		ll.insert(300);
+		ll.insert_beginning(500);
+		ll.insert_specific(2,190);
+		ll.Display();
+		
+	}
+}
