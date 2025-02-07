@@ -15,7 +15,7 @@ public class Bubble_Sort {
 				}
 			}
 		}
-		System.out.println(Arrays.toString(arr));
+		System.out.println(arraystostring(arr));
 	}
          public static String arraystostring(int arr[]) {
 		String result = "[";
