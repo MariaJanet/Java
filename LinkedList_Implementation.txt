@@ -1,0 +1,562 @@
+SINGLY LINKED LIST
+
+
+//INSERT
+
+import java.util.*;
+// creating a class node step -1
+class Node{
+    int data;
+    Node next;
+    //creating a constructor step-2
+    Node(int data){
+        this.data = data;
+        this.next = null;
+    }
+}
+//Step 4
+class LinkedList{
+    Node head,tail;
+    public void insert(int data){
+        Node newNode = new Node(data);
+        //newNode.next = head;
+        if(head == null){
+            head = newNode;
+            tail = newNode;
+        }
+        else{
+            tail.next = newNode;
+            tail = newNode;
+        }
+    }
+    //insert at beginning
+    public void insert_beginning(int data){
+        Node newNode = new Node(data);
+        newNode.next = head;
+        head = newNode;
+        System.out.print("Insert at begining:");
+        
+    }
+    //insert at specific
+    public void insert_specific(int pos,int data){
+        Node newNode = new Node(data);
+        Node temp = head;
+        for(int i = 0; i<pos-1;i++){
+            temp = temp.next;
+            newNode.next = temp.next;
+            temp.next = newNode;
+        }
+    }
+    public void Display(){
+        Node temp = head;
+        while(temp != null){
+            System.out.println(temp.data);
+            temp = temp.next;
+        }
+    }
+}
+public class Main //Step - 3
+{
+	public static void main(String[] args) {
+		LinkedList ll = new LinkedList();
+		ll.insert(100);
+		ll.insert(200);
+		ll.insert(300);
+		ll.insert_beginning(500);
+		ll.insert_specific(2,190);
+		ll.Display();
+		
+	}
+}
+
+
+// DOUBLY LINKED LIST
+
+
+package Java_Prac;
+import java.util.*;
+
+class Node{
+    int data;
+    Node next;
+    Node prev;
+    Node(int data){
+        this.data=data;
+        this.next=null;
+        this.prev=null;
+    }
+}
+class DLL{
+    Node head,tail;
+    public void insertAtBeg(int data){ //INSERT AT BEGINING
+        Node newnode = new Node(data);
+        if(head == null){
+            head= newnode;
+            tail=newnode;
+        }
+        else{
+            newnode.next=head;
+            head.prev=newnode;
+            head=newnode;
+        }
+    }
+    public void insertAtend(int data){  //INSERT AT END
+        Node newnode = new Node(data);
+        if(tail==null){
+            head = newnode;
+            tail=newnode;
+        }
+        else{
+            tail.next=newnode;
+            newnode.prev=tail;
+            tail=newnode;
+        }
+    }
+    public void deleteAtBeg(){  //DELETE AT BEGINING
+        if(head==null){
+            System.out.println("List is empty");
+        }
+        if(head == tail){
+            head = null;
+           tail = null;
+        }
+        else{
+            head=head.next;
+            head.prev=null;
+        }
+    }
+    public void deleteAtend(){	//DELETE AT END
+    	Node temp = head;
+    	if(temp==null) {
+    		System.out.println("List is empty");
+    	}
+    	while(temp.next.next != null) {
+    		temp = temp.next;
+    	}
+    	temp.next=null;
+    }
+    public void specificpos(int pos, int data) { 	//	SPECIFIC POSITION TO INSERT THE ELEMENT
+        Node newnode = new Node(data);
+        Node temp = head;
+        if (pos == 0) {
+            insertAtBeg(data);
+          return;
+
+        }
+        for (int i = 0; temp != null && i < pos - 1; i++) {
+            temp = temp.next;
+        }
+        if (temp == null) {
+           System.out.println("Position out of bounds");
+            return;
+        }
+        newnode.next = temp.next;
+        newnode.prev = temp;
+        if (temp.next != null) {
+            temp.next.prev = newnode;
+        }
+        temp.next = newnode;
+        if (newnode.next == null) {
+            tail = newnode;
+        }
+    }
+    public void reverse(){  //REVERSE THE ELMENT 
+    	Node prev=null;
+    	Node current=head;
+    	Node next=null;
+    	while(current != null) {
+    		next=current.next;
+    		current.next=prev;
+    		prev=current;
+    		current=next;
+    	}
+    	head=prev;
+    }
+    public void display(){	//DISPLAY THE NODE
+        Node temp=head;
+        if(temp==null){
+            System.out.println("List is empty");
+        }
+        while (temp != null) {
+            System.out.print(temp.data);
+            if (temp.next != null) {
+                System.out.print("<-->");
+            }
+            temp = temp.next;
+        }
+        System.out.println();
+    }
+}
+public class Main {
+	public static void main(String[] args) {
+		DLL link = new DLL();
+	    link.insertAtBeg(100); //1
+	    link.insertAtBeg(400); //2
+	    link.insertAtBeg(500); //3
+	    link.insertAtend(200); //1
+	    link.insertAtend(300); //2
+	    link.insertAtend(600); //3
+	    link.specificpos(2, 900);	   
+	    link.reverse();
+	    link.display();
+
+	}
+
+}
+
+
+CIRCULAR LINKED LIST
+
+package Java_Prac;
+
+public class circular {
+
+}
+import java.util.Scanner;
+
+class CircularLinkedList {
+    // Node class for circular linked list
+    static class Node {
+        int data;
+        Node next;
+        
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+
+    private Node head = null;
+    private Node tail = null;
+
+    // Insert at the end of the circular linked list
+    public void insertEnd(int value) {
+        Node newNode = new Node(value);
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+            newNode.next = head; 
+        } else {
+            tail.next = newNode;
+            tail = newNode;
+            tail.next = head; 
+        }
+        System.out.println(value + " inserted at the end.");
+    }
+
+    // Insert at the beginning of the circular linked list
+    public void insertBeginning(int value) {
+        Node newNode = new Node(value);
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+            newNode.next = head; 
+        } else {
+            newNode.next = head;
+            head = newNode;
+            tail.next = head; // Maintain circular link
+        }
+        System.out.println(value + " inserted at the beginning.");
+    }
+
+    // Delete from the beginning of the circular linked list
+    public void deleteBeginning() {
+        if (head == null) {
+            System.out.println("The list is empty. Cannot delete.");
+            return;
+        }
+        if (head == tail) {
+            head = tail = null;
+        } else {
+            head = head.next;
+            tail.next = head; // Maintain circular link
+        }
+        System.out.println("Deleted from the beginning.");
+    }
+
+    // Delete from the end of the circular linked list
+    public void deleteEnd() {
+        if (head == null) {
+            System.out.println("The list is empty. Cannot delete.");
+            return;
+        }
+        if (head == tail) {
+            head = tail = null;
+        } else {
+            Node temp = head;
+            while (temp.next != tail) {
+                temp = temp.next;
+            }
+            temp.next = head; // Make the list circular again
+            tail = temp;
+        }
+        System.out.println("Deleted from the end.");
+    }
+
+    // Reverse the circular linked list
+    public void reverse() {
+        if (head == null || head.next == head) {
+            System.out.println("The list is empty or contains only one element. No reversal needed.");
+            return;
+        }
+        Node prev = null;
+        Node current = head;
+        Node next = null;
+        tail = head; // The head will become the tail after reversal
+
+        do {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        } while (current != head);
+
+        head = prev; // Update head to the new reversed head
+        tail.next = head; // Maintain the circular nature
+        System.out.println("List reversed.");
+    }
+
+    // Display the circular linked list
+    public void display() {
+        if (head == null) {
+            System.out.println("The list is empty.");
+            return;
+        }
+        Node temp = head;
+        do {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        } while (temp != head);
+        System.out.println();
+    }
+}
+
+public class CircularLinkedListOperations {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        CircularLinkedList list = new CircularLinkedList();
+
+        while (true) {
+            System.out.println("\nCircular Linked List Operations:");
+            System.out.println("1. Insert at the End");
+            System.out.println("2. Insert at the Beginning");
+            System.out.println("3. Delete from the End");
+            System.out.println("4. Delete from the Beginning");
+            System.out.println("5. Reverse the List");
+            System.out.println("6. Display the List");
+            System.out.println("7. Exit");
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter value to insert at the end: ");
+                    int endValue = scanner.nextInt();
+                    list.insertEnd(endValue);
+                    break;
+                case 2:
+                    System.out.print("Enter value to insert at the beginning: ");
+                    int beginValue = scanner.nextInt();
+                    list.insertBeginning(beginValue);
+                    break;
+                case 3:
+                    list.deleteEnd();
+                    break;
+                case 4:
+                    list.deleteBeginning();
+                    break;
+                case 5:
+                    list.reverse();
+                    break;
+                case 6:
+                    list.display();
+                    break;
+                case 7:
+                    System.out.println("Exiting program...");
+                    scanner.close();
+                    return;
+                default:
+                    System.out.println("Invalid choice, try again.");
+            }
+        }
+    }
+}
+package Java_Prac;
+
+public class circular {
+
+}
+import java.util.Scanner;
+
+class CircularLinkedList {
+    // Node class for circular linked list
+    static class Node {
+        int data;
+        Node next;
+        
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+
+    private Node head = null;
+    private Node tail = null;
+
+    // Insert at the end of the circular linked list
+    public void insertEnd(int value) {
+        Node newNode = new Node(value);
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+            newNode.next = head; 
+        } else {
+            tail.next = newNode;
+            tail = newNode;
+            tail.next = head; 
+        }
+        System.out.println(value + " inserted at the end.");
+    }
+
+    // Insert at the beginning of the circular linked list
+    public void insertBeginning(int value) {
+        Node newNode = new Node(value);
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+            newNode.next = head; 
+        } else {
+            newNode.next = head;
+            head = newNode;
+            tail.next = head; // Maintain circular link
+        }
+        System.out.println(value + " inserted at the beginning.");
+    }
+
+    // Delete from the beginning of the circular linked list
+    public void deleteBeginning() {
+        if (head == null) {
+            System.out.println("The list is empty. Cannot delete.");
+            return;
+        }
+        if (head == tail) {
+            head = tail = null;
+        } else {
+            head = head.next;
+            tail.next = head; // Maintain circular link
+        }
+        System.out.println("Deleted from the beginning.");
+    }
+
+    // Delete from the end of the circular linked list
+    public void deleteEnd() {
+        if (head == null) {
+            System.out.println("The list is empty. Cannot delete.");
+            return;
+        }
+        if (head == tail) {
+            head = tail = null;
+        } else {
+            Node temp = head;
+            while (temp.next != tail) {
+                temp = temp.next;
+            }
+            temp.next = head; // Make the list circular again
+            tail = temp;
+        }
+        System.out.println("Deleted from the end.");
+    }
+
+    // Reverse the circular linked list
+    public void reverse() {
+        if (head == null || head.next == head) {
+            System.out.println("The list is empty or contains only one element. No reversal needed.");
+            return;
+        }
+        Node prev = null;
+        Node current = head;
+        Node next = null;
+        tail = head; // The head will become the tail after reversal
+
+        do {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        } while (current != head);
+
+        head = prev; // Update head to the new reversed head
+        tail.next = head; // Maintain the circular nature
+        System.out.println("List reversed.");
+    }
+
+    // Display the circular linked list
+    public void display() {
+        if (head == null) {
+            System.out.println("The list is empty.");
+            return;
+        }
+        Node temp = head;
+        do {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        } while (temp != head);
+        System.out.println();
+    }
+}
+
+public class CircularLinkedListOperations {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        CircularLinkedList list = new CircularLinkedList();
+
+        while (true) {
+            System.out.println("\nCircular Linked List Operations:");
+            System.out.println("1. Insert at the End");
+            System.out.println("2. Insert at the Beginning");
+            System.out.println("3. Delete from the End");
+            System.out.println("4. Delete from the Beginning");
+            System.out.println("5. Reverse the List");
+            System.out.println("6. Display the List");
+            System.out.println("7. Exit");
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter value to insert at the end: ");
+                    int endValue = scanner.nextInt();
+                    list.insertEnd(endValue);
+                    break;
+                case 2:
+                    System.out.print("Enter value to insert at the beginning: ");
+                    int beginValue = scanner.nextInt();
+                    list.insertBeginning(beginValue);
+                    break;
+                case 3:
+                    list.deleteEnd();
+                    break;
+                case 4:
+                    list.deleteBeginning();
+                    break;
+                case 5:
+                    list.reverse();
+                    break;
+                case 6:
+                    list.display();
+                    break;
+                case 7:
+                    System.out.println("Exiting program...");
+                    scanner.close();
+                    return;
+                default:
+                    System.out.println("Invalid choice, try again.");
+            }
+        }
+    }
+}
+
+
+
+
+
